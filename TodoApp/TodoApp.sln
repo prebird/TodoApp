@@ -9,9 +9,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{CBFEA9CE-569C-
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TodoApp.ConsoleApp", "TodoApp.ConsoleApp\TodoApp.ConsoleApp.csproj", "{9DDEF5A0-463A-4891-96F9-72EF646F789E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoApp.ConsoleAppFile", "TodoApp.ConsoleAppFile\TodoApp.ConsoleAppFile.csproj", "{7BE62041-1844-4C0C-A406-508E77557A7A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TodoApp.ConsoleAppFile", "TodoApp.ConsoleAppFile\TodoApp.ConsoleAppFile.csproj", "{7BE62041-1844-4C0C-A406-508E77557A7A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoApp.WindowsFormsApp", "TodoApp.WindowsFormsApp\TodoApp.WindowsFormsApp.csproj", "{846E663E-D2FC-4D8F-ADF3-4EC8846910CE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TodoApp.WindowsFormsApp", "TodoApp.WindowsFormsApp\TodoApp.WindowsFormsApp.csproj", "{846E663E-D2FC-4D8F-ADF3-4EC8846910CE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{32DCD50C-E6C9-4FAE-9A50-246C1B2CFDB5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoApp.API", "TodoApp.API\TodoApp.API.csproj", "{0930E5C6-14AC-4F27-A24F-3252E3EE0D2A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,6 +39,10 @@ Global
 		{846E663E-D2FC-4D8F-ADF3-4EC8846910CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{846E663E-D2FC-4D8F-ADF3-4EC8846910CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{846E663E-D2FC-4D8F-ADF3-4EC8846910CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0930E5C6-14AC-4F27-A24F-3252E3EE0D2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0930E5C6-14AC-4F27-A24F-3252E3EE0D2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0930E5C6-14AC-4F27-A24F-3252E3EE0D2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0930E5C6-14AC-4F27-A24F-3252E3EE0D2A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -43,6 +51,7 @@ Global
 		{9DDEF5A0-463A-4891-96F9-72EF646F789E} = {CBFEA9CE-569C-4D41-BC39-7738068AA783}
 		{7BE62041-1844-4C0C-A406-508E77557A7A} = {CBFEA9CE-569C-4D41-BC39-7738068AA783}
 		{846E663E-D2FC-4D8F-ADF3-4EC8846910CE} = {CBFEA9CE-569C-4D41-BC39-7738068AA783}
+		{0930E5C6-14AC-4F27-A24F-3252E3EE0D2A} = {32DCD50C-E6C9-4FAE-9A50-246C1B2CFDB5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BD9C130F-A092-4E11-AC9A-0C7A0E520AD0}
