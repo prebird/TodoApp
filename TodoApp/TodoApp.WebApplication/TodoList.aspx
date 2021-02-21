@@ -12,6 +12,7 @@
         <div>
             <h1>할 일 목록</h1>
             <asp:GridView ID="GridView1" runat="server"></asp:GridView>
+            <asp:GridView ID="GridView2" runat="server"></asp:GridView>
         </div>
     </form>
 </body>

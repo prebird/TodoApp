@@ -22,10 +22,10 @@ namespace TodoApp.WebApplication
             using (var client = new HttpClient()) //가장전통적인것
             {
                 //데이터 전송
-                var json = JsonConvert.SerializeObject(new Todo
-                { Title = "HttpClientTest", IsDone = false });
-                var post = new StringContent(json, Encoding.UTF8, "application/json");
-                client.PostAsync(url, post).Wait();
+                //var json = JsonConvert.SerializeObject(new Todo
+                //{ Title = "HttpClientTest", IsDone = false });
+                //var post = new StringContent(json, Encoding.UTF8, "application/json");
+                //client.PostAsync(url, post).Wait();
                 //데이터 수신
                 var response = client.GetAsync(url).Result;
                 var result = response.Content.ReadAsStringAsync().Result;
@@ -43,13 +43,38 @@ namespace TodoApp.WebApplication
                 //쿼리어블 -> 쿼리형태로 계속붙히고 싶을때
                 //짝수인것들의 타이틀과 이즈던만 읽어오기
                 var query = todos.AsQueryable<Todo>();
-                query = query.Where(x => x.Id % 2 == 0);
-                var q = todos.Select(t => new TodoViewModel 
+                //조건처리
+                if (DateTime.Now.Second % 2==0)
+                {
+                    query = query.Where(x => x.Id % 2 == 0);
+                }
+                else
+                {
+                    query = query.Where(x => x.Id % 2 == 1);
+                }
+                //조건처리( 하지 않은것만 읽어오고 싶음)
+                query = query.Where(it => it.IsDone == false);
+
+                //정렬
+                const string sortOrder = "Title";
+                query = (sortOrder == "Title" ? query.OrderBy(it => it.Title) : query);
+                
+
+                var q = query.Select(t => new TodoViewModel 
                 { Title = t.Title, IsDone = t.IsDone });
 
                 // 데이터 바인딩
                 this.GridView1.DataSource = q;
                 this.GridView1.DataBind(); //웹폼의 문법 
+
+                this.GridView2.DataSource = 
+                    todos.
+                        Where(t => t.Id % 2 == 1&& t.IsDone == false).
+                        OrderByDescending(t => t.Title).
+                        Select(t => new { 제목 = t.Title, 완료여부 = t.IsDone });
+                //select문 - 어내니머스 타입으로 새로 지정가능
+
+                this.GridView2.DataBind(); //웹폼의 문법 
 
             }
         }
